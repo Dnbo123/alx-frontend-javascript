@@ -14,6 +14,7 @@ const teacher1: Teacher = {
     location: "Phuket",
     contract: true, //New attribute
     department: "production"
+    
 }
 
 console.log(teacher1);
