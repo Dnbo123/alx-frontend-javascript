@@ -53,3 +53,29 @@ function demonstrateEmployeeCreation() {
     console.log(createEmployee('$500')); // Should output: Director
 
 }
+demonstrateEmployeeCreation();
+ 
+// Type predicate function to check if employee is a Director
+function isDirector(employee: Director | Teacher): employee is Director {
+    return employee instanceof Director;
+}
+
+// Execute work function based on employee type
+function executeWork(employee: Director | Teacher): string {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
+}
+// Demonstration function
+function demonstrateEmployeeWork() {
+    // Demonstrate executeWork function
+    console.log(executeWork(createEmployee(200))); // Should output: Getting to work
+    console.log(executeWork(createEmployee(1000))); // Should output: Getting to director tasks
+
+    // Additional demonstration with explicit type checking
+    const teacher = createEmployee(200);
+    const director = createEmployee(1000);
+}
+demonstrateEmployeeWork();
