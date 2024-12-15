@@ -36,3 +36,20 @@ interface Directors {
         numberOfReports: 10,
     }
     console.log(director1);
+
+    interface printTeacherFunction {
+       (firstName: string, lastName: string): string;
+    }
+//implement printTeaher function
+    const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+        if(!firstName || !lastName) {
+            throw new Error('Both firstName and lastName nust be provided')
+        }
+       
+       //Take the firstName and capitalize
+       const firstInitial = firstName.charAt(0).toUpperCase();
+
+       return `${firstInitial}. ${lastName}`
+    };
+
+    console.log(printTeacher("Don", "Bosco"));
