@@ -79,3 +79,28 @@ function demonstrateEmployeeWork() {
     const director = createEmployee(1000);
 }
 demonstrateEmployeeWork();
+
+// Define a string literal type for Subjects
+type Subjects = 'Math' | 'History';
+
+// Function to teach a specific class
+function teachClass(todayClass: Subjects): string {
+    switch (todayClass) {
+        case 'Math':
+            return 'Teaching Math';
+        case 'History':
+            return 'Teaching History';
+        default:
+            // This ensures complete type coverage
+            const exhaustiveCheck: never = todayClass;
+            throw new Error(`Unexpected subject: ${exhaustiveCheck}`);
+    }
+}
+
+// Demonstration function
+function demonstrateTeachClass() {
+    // Demonstrate teaching different classes
+    console.log(teachClass('Math')); // Should output: Teaching Math
+    console.log(teachClass('History')); // Should output: Teaching History
+}
+demonstrateTeachClass();
