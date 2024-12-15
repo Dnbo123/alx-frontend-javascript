@@ -53,3 +53,32 @@ interface Directors {
     };
 
     console.log(printTeacher("Don", "Bosco"));
+    
+    
+    //Interface for constructor parameters
+        interface StudentConstructor {
+        firstName: string;
+        lastName: string;
+    }
+        //Describing studentClass methods
+    interface StudentInterface {
+        workOnHomework(): string;
+        displayName(): string;
+    }
+
+    //implementing studentClass
+ class StudentClass implements StudentInterface {
+      firstName: string;
+      lastName: string;
+
+    constructor({ firstName, lastName }: StudentConstructor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+ }
+    workOnHomework(): string {
+        return 'currently working'
+    }
+    displayName(): string {
+        return this.firstName;
+    }
+ }
