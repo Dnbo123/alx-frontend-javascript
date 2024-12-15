@@ -7,6 +7,7 @@ import * as CRUD from './crud';
 const row: RowElement = {
     firstName: 'Guillaume',
     lastName: 'Salva'
+    
 };
 
 // Insert the row and get the new row ID
